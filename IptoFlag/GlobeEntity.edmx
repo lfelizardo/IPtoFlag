@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GlobeDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GlobeDatabaseModelStoreContainer">
+          <EntitySet Name="Continents" EntityType="GlobeDatabaseModel.Store.Continents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Countries" EntityType="GlobeDatabaseModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Info" EntityType="GlobeDatabaseModel.Store.Info" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Countries_ToContinents" Association="GlobeDatabaseModel.Store.FK_Countries_ToContinents">
+            <End Role="Continents" EntitySet="Continents" />
+            <End Role="Countries" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Info_ToCountries" Association="GlobeDatabaseModel.Store.FK_Info_ToCountries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Info" EntitySet="Info" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Continents">
+          <Key>
+            <PropertyRef Name="IdContinent" />
+          </Key>
+          <Property Name="IdContinent" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="IdCountry" />
+          </Key>
+          <Property Name="IdCountry" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="40" />
+          <Property Name="IdContinent" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Info">
+          <Key>
+            <PropertyRef Name="IdInfo" />
+          </Key>
+          <Property Name="IdInfo" Type="int" Nullable="false" />
+          <Property Name="IdCountry" Type="int" Nullable="false" />
+          <Property Name="InfoCountry" Type="text" Nullable="false" />
+          <Property Name="IP" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Location" Type="nchar" Nullable="false" MaxLength="40" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Countries_ToContinents">
+          <End Role="Continents" Type="GlobeDatabaseModel.Store.Continents" Multiplicity="1" />
+          <End Role="Countries" Type="GlobeDatabaseModel.Store.Countries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Continents">
+              <PropertyRef Name="IdContinent" />
+            </Principal>
+            <Dependent Role="Countries">
+              <PropertyRef Name="IdContinent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Info_ToCountries">
+          <End Role="Countries" Type="GlobeDatabaseModel.Store.Countries" Multiplicity="1" />
+          <End Role="Info" Type="GlobeDatabaseModel.Store.Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="Info">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GlobeDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GlobeDatabaseEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Continents" EntityType="GlobeDatabaseModel.Continents" />
+          <EntitySet Name="Countries" EntityType="GlobeDatabaseModel.Countries" />
+          <EntitySet Name="Info" EntityType="GlobeDatabaseModel.Info" />
+          <AssociationSet Name="FK_Countries_ToContinents" Association="GlobeDatabaseModel.FK_Countries_ToContinents">
+            <End Role="Continents" EntitySet="Continents" />
+            <End Role="Countries" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Info_ToCountries" Association="GlobeDatabaseModel.FK_Info_ToCountries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Info" EntitySet="Info" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Continents">
+          <Key>
+            <PropertyRef Name="IdContinent" />
+          </Key>
+          <Property Name="IdContinent" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Countries" Relationship="GlobeDatabaseModel.FK_Countries_ToContinents" FromRole="Continents" ToRole="Countries" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="IdCountry" />
+          </Key>
+          <Property Name="IdCountry" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="true" />
+          <Property Name="IdContinent" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Continents" Relationship="GlobeDatabaseModel.FK_Countries_ToContinents" FromRole="Countries" ToRole="Continents" />
+          <NavigationProperty Name="Info" Relationship="GlobeDatabaseModel.FK_Info_ToCountries" FromRole="Countries" ToRole="Info" />
+        </EntityType>
+        <EntityType Name="Info">
+          <Key>
+            <PropertyRef Name="IdInfo" />
+          </Key>
+          <Property Name="IdInfo" Type="Int32" Nullable="false" />
+          <Property Name="IdCountry" Type="Int32" Nullable="false" />
+          <Property Name="InfoCountry" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Location" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Countries" Relationship="GlobeDatabaseModel.FK_Info_ToCountries" FromRole="Info" ToRole="Countries" />
+        </EntityType>
+        <Association Name="FK_Countries_ToContinents">
+          <End Role="Continents" Type="GlobeDatabaseModel.Continents" Multiplicity="1" />
+          <End Role="Countries" Type="GlobeDatabaseModel.Countries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Continents">
+              <PropertyRef Name="IdContinent" />
+            </Principal>
+            <Dependent Role="Countries">
+              <PropertyRef Name="IdContinent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Info_ToCountries">
+          <End Role="Countries" Type="GlobeDatabaseModel.Countries" Multiplicity="1" />
+          <End Role="Info" Type="GlobeDatabaseModel.Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="IdCountry" />
+            </Principal>
+            <Dependent Role="Info">
+              <PropertyRef Name="IdCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GlobeDatabaseModelStoreContainer" CdmEntityContainer="GlobeDatabaseEntities">
+          <EntitySetMapping Name="Continents">
+            <EntityTypeMapping TypeName="GlobeDatabaseModel.Continents">
+              <MappingFragment StoreEntitySet="Continents">
+                <ScalarProperty Name="IdContinent" ColumnName="IdContinent" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="GlobeDatabaseModel.Countries">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdContinent" ColumnName="IdContinent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Info">
+            <EntityTypeMapping TypeName="GlobeDatabaseModel.Info">
+              <MappingFragment StoreEntitySet="Info">
+                <ScalarProperty Name="IdInfo" ColumnName="IdInfo" />
+                <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+                <ScalarProperty Name="InfoCountry" ColumnName="InfoCountry" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GlobeDatabaseModelStoreContainer" CdmEntityContainer="GlobeDatabaseEntities">
+    <EntitySetMapping Name="Continents">
+      <EntityTypeMapping TypeName="GlobeDatabaseModel.Continents">
+        <MappingFragment StoreEntitySet="Continents">
+          <ScalarProperty Name="IdContinent" ColumnName="IdContinent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="GlobeDatabaseModel.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdContinent" ColumnName="IdContinent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Info">
+      <EntityTypeMapping TypeName="GlobeDatabaseModel.Info">
+        <MappingFragment StoreEntitySet="Info">
+          <ScalarProperty Name="IdInfo" ColumnName="IdInfo" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="InfoCountry" ColumnName="InfoCountry" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

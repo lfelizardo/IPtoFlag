@@ -8,6 +8,13 @@ namespace IptoFlag.Controllers
 {
     public class HomeController : Controller
     {
+        private Repository repository;
+
+        public HomeController()
+        {
+            this.repository = new Repository();
+        }
+
         public ActionResult Index()
         {
             ViewBag.Message = "World Map";
@@ -16,6 +23,7 @@ namespace IptoFlag.Controllers
 
         public ActionResult Info()
         {
+            ViewBag.Infos = this.repository.GetInfos().ToList();
             return View();
         }
 

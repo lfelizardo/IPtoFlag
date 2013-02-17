@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GlobeDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GlobeDatabaseEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Continents" EntityType="GlobeDatabaseModel.Continents" />
+    <EntitySet Name="Countries" EntityType="GlobeDatabaseModel.Countries" />
+    <EntitySet Name="Info" EntityType="GlobeDatabaseModel.Info" />
+    <AssociationSet Name="FK_Countries_ToContinents" Association="GlobeDatabaseModel.FK_Countries_ToContinents">
+      <End Role="Continents" EntitySet="Continents" />
+      <End Role="Countries" EntitySet="Countries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Info_ToCountries" Association="GlobeDatabaseModel.FK_Info_ToCountries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Info" EntitySet="Info" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Continents">
+    <Key>
+      <PropertyRef Name="IdContinent" />
+    </Key>
+    <Property Name="IdContinent" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Countries" Relationship="GlobeDatabaseModel.FK_Countries_ToContinents" FromRole="Continents" ToRole="Countries" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="IdCountry" />
+    </Key>
+    <Property Name="IdCountry" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="true" />
+    <Property Name="IdContinent" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Continents" Relationship="GlobeDatabaseModel.FK_Countries_ToContinents" FromRole="Countries" ToRole="Continents" />
+    <NavigationProperty Name="Info" Relationship="GlobeDatabaseModel.FK_Info_ToCountries" FromRole="Countries" ToRole="Info" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="IdInfo" />
+    </Key>
+    <Property Name="IdInfo" Type="Int32" Nullable="false" />
+    <Property Name="IdCountry" Type="Int32" Nullable="false" />
+    <Property Name="InfoCountry" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="IP" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Countries" Relationship="GlobeDatabaseModel.FK_Info_ToCountries" FromRole="Info" ToRole="Countries" />
+  </EntityType>
+  <Association Name="FK_Countries_ToContinents">
+    <End Role="Continents" Type="GlobeDatabaseModel.Continents" Multiplicity="1" />
+    <End Role="Countries" Type="GlobeDatabaseModel.Countries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Continents">
+        <PropertyRef Name="IdContinent" />
+      </Principal>
+      <Dependent Role="Countries">
+        <PropertyRef Name="IdContinent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Info_ToCountries">
+    <End Role="Countries" Type="GlobeDatabaseModel.Countries" Multiplicity="1" />
+    <End Role="Info" Type="GlobeDatabaseModel.Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="Info">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -45,6 +45,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -96,18 +98,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Continents.cs">
+      <DependentUpon>GlobeEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Countries.cs">
+      <DependentUpon>GlobeEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="GlobeData.designer.cs">
+    <Compile Include="GlobeEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GlobeData.dbml</DependentUpon>
+      <DependentUpon>GlobeEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobeEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobeEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobeEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobeEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cs">
+      <DependentUpon>GlobeEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\GlobeDatabase.mdf" />
@@ -169,14 +191,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="GlobeData.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>GlobeData.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EntityDeploy Include="GlobeEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GlobeEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="GlobeEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GlobeEntity.edmx</DependentUpon>
+      <LastGenOutput>GlobeEntity.Context.cs</LastGenOutput>
     </Content>
-    <None Include="GlobeData.dbml.layout">
-      <DependentUpon>GlobeData.dbml</DependentUpon>
-    </None>
+    <Content Include="GlobeEntity.edmx.diagram">
+      <DependentUpon>GlobeEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="GlobeEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GlobeEntity.edmx</DependentUpon>
+      <LastGenOutput>GlobeEntity.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -219,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

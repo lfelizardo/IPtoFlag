@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GlobeDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GlobeDatabaseModelStoreContainer">
+    <EntitySet Name="Continents" EntityType="GlobeDatabaseModel.Store.Continents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="GlobeDatabaseModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Info" EntityType="GlobeDatabaseModel.Store.Info" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Countries_ToContinents" Association="GlobeDatabaseModel.Store.FK_Countries_ToContinents">
+      <End Role="Continents" EntitySet="Continents" />
+      <End Role="Countries" EntitySet="Countries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Info_ToCountries" Association="GlobeDatabaseModel.Store.FK_Info_ToCountries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Info" EntitySet="Info" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Continents">
+    <Key>
+      <PropertyRef Name="IdContinent" />
+    </Key>
+    <Property Name="IdContinent" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="IdCountry" />
+    </Key>
+    <Property Name="IdCountry" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" Nullable="false" MaxLength="40" />
+    <Property Name="IdContinent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="IdInfo" />
+    </Key>
+    <Property Name="IdInfo" Type="int" Nullable="false" />
+    <Property Name="IdCountry" Type="int" Nullable="false" />
+    <Property Name="InfoCountry" Type="text" Nullable="false" />
+    <Property Name="IP" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="Location" Type="nchar" Nullable="false" MaxLength="40" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Countries_ToContinents">
+    <End Role="Continents" Type="GlobeDatabaseModel.Store.Continents" Multiplicity="1" />
+    <End Role="Countries" Type="GlobeDatabaseModel.Store.Countries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Continents">
+        <PropertyRef Name="IdContinent" />
+      </Principal>
+      <Dependent Role="Countries">
+        <PropertyRef Name="IdContinent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Info_ToCountries">
+    <End Role="Countries" Type="GlobeDatabaseModel.Store.Countries" Multiplicity="1" />
+    <End Role="Info" Type="GlobeDatabaseModel.Store.Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="Info">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

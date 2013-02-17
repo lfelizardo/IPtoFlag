@@ -2,7 +2,56 @@
     ViewBag.Title = "Info Entries";
 }
 
-<h2>List of Entrie Posted by Users</h2>
-<p>
-     Put content here.
-</p>
+@*@foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
+    {
+        //<p> @info.IP </p>
+    }*@
+
+<table>
+    <tr>
+        <th>
+            ID Info
+        </th>
+        <th>
+            Country Name
+        </th>
+        <th>
+            Information
+        </th>
+        <th>
+            IP
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Date
+        </th>
+    </tr>
+
+@foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
+{
+    
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => info.IdInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => info.Countries.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => info.InfoCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => info.IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => info.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => info.Date)
+        </td>
+    </tr>
+}
+
+</table>
