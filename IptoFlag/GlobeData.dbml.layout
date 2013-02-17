@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GlobeData">
+  <DataContextMoniker Name="/GlobeDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0c9dffc3-c61e-4f8b-82c1-bc23328828cd" absoluteBounds="2.625, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/GlobeDataDataContext/Continent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f8451fc-ec64-4762-94c0-dd1b6fac9f08" absoluteBounds="2.64, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" absoluteBounds="5.875, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GlobeDataDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6200eb1-f5b4-45c7-97f7-2126c3f8bb4e" absoluteBounds="5.89, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 2.59699625651042); (5.875 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GlobeDataDataContext/Continent/Continent_Country" />
+      <nodes>
+        <classShapeMoniker Id="0c9dffc3-c61e-4f8b-82c1-bc23328828cd" />
+        <classShapeMoniker Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="daf81db7-8b0a-4966-a5a4-112bf2734715" absoluteBounds="6, 4.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/GlobeDataDataContext/Info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a3ce0de-e60c-43d4-919c-13ecf79ff1a5" absoluteBounds="6.015, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.9375 : 3.3862939453125); (6.9375 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GlobeDataDataContext/Country/Country_Info" />
+      <nodes>
+        <classShapeMoniker Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" />
+        <classShapeMoniker Id="daf81db7-8b0a-4966-a5a4-112bf2734715" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
