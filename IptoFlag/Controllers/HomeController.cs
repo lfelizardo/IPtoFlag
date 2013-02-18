@@ -10,12 +10,18 @@ namespace IptoFlag.Controllers
     {
         public ActionResult Index()
         {
-            //ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "World Map";
             return View();
         }
 
         public ActionResult About()
         {
+            return View();
+        }
+
+        public ActionResult Europe()
+        {
+            ViewBag.Message = "Europe";
             return View();
         }
     }
