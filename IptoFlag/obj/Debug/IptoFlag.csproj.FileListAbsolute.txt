@@ -18,3 +18,4 @@ C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\System.Web.WebPages.Deploy
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\System.Web.WebPages.Razor.xml
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.dll
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.pdb
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.csprojResolveAssemblyReference.cache

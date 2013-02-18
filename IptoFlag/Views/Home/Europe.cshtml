@@ -4,22 +4,37 @@
 
 @section Styles {
     <link href="@Url.Content("~/Styles/cssmap-europe/cssmap-europe.css")" rel="stylesheet" type="text/css" media="screen,projection"/>
-    <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
     <script type="text/javascript">
         $(function ($) {
+            $("#dropdown").hide();
             $('#map-europe').cssMap({ 'size': 960 });
+            $("#eu-countries li").click(function () {
+                $("#dropdown").show().val($(this).attr("id"));
+                //alert($(this).attr("id"));
+            });
         });
     </script>
+
 }
 
 <h2>@ViewBag.Message</h2>
 
 <div id="map-europe">
- <ul class="europe">
+ <ul id="eu-countries" class="europe">
 @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
 {
-    <li class="@String.Format("eu{0}", country.IdCountry)"><a href="@String.Format("#{0}", country.Name)">@String.Format("{0}", country.Name)</a></li>
+    <li id="@String.Format("{0}", country.Name)" class="@String.Format("eu{0}", country.IdCountry)"><a href="@String.Format("#{0}", country.Name)">@String.Format("{0}", country.Name)</a></li>
 }
 </ul>
+</div>
+
+<div id="info-box">
+  <select id="dropdown">
+    @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
+    {
+        <option value="@String.Format("{0}", country.Name)">@String.Format("{0}", country.Name)</option>
+    }
+  </select>
 </div>
