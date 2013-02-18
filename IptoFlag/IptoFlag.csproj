@@ -216,7 +216,24 @@
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Styles\cssmap-continents\continents-210.png" />
+    <Content Include="Styles\cssmap-continents\continents-320.png" />
+    <Content Include="Styles\cssmap-continents\continents-430.png" />
+    <Content Include="Styles\cssmap-continents\continents-540.png" />
+    <Content Include="Styles\cssmap-continents\continents-650.png" />
+    <Content Include="Styles\cssmap-continents\continents-750.png" />
+    <Content Include="Styles\cssmap-continents\continents-850.png" />
+    <Content Include="Styles\cssmap-continents\cssmap-continents.css" />
+    <Content Include="Styles\cssmap-europe\cssmap-europe.css" />
+    <Content Include="Styles\cssmap-europe\eu-250.png" />
+    <Content Include="Styles\cssmap-europe\eu-500.png" />
+    <Content Include="Styles\cssmap-europe\eu-660.png" />
+    <Content Include="Styles\cssmap-europe\eu-810.png" />
+    <Content Include="Styles\cssmap-europe\eu-960.png" />
+    <Content Include="Styles\kendo.common.min.css" />
+    <Content Include="Styles\kendo.default.min.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -255,9 +272,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Styles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

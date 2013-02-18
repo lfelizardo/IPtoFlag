@@ -2,17 +2,23 @@
     ViewBag.Title = "Info Entries";
 }
 
-@*@foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
-    {
-        //<p> @info.IP </p>
-    }*@
+@*
+@foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
+{
+    <p> @info.IP </p>
+}
+*@
 
-@* @using (Html.BeginForm()){   
-         <p>Country: @Html.DropDownList("IdCountry", "All")  
-        <input type="submit" value="Filter" /></p>
-        }*@
+@* 
+@using (Html.BeginForm())
+{   
+    <p>Country: @Html.DropDownList("IdCountry", "All")  
+    <input type="submit" value="Filter" /></p>
+}
+*@
 
-<table>
+<table id="grid">
+    <thead>
     <tr>
         <th>
             ID Info
@@ -33,9 +39,11 @@
             Date
         </th>
     </tr>
+    </thead>
 
 @foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
 {
+    <tbody>
     <tr>
         <td>
             @Html.DisplayFor(modelItem => info.IdInfo)
@@ -56,6 +64,29 @@
             @Html.DisplayFor(modelItem => info.Date)
         </td>
     </tr>
+    </tbody>
 }
 
 </table>
+
+<script>
+  $(document).ready(function(){
+      $("#grid").kendoGrid({
+          dataSource: {
+              transport: {
+                  read: {
+                      url: "GlobeEntity.edmx"
+                  }
+              },
+              schema: {
+                  data: "data",
+                  total: "count"
+              },
+              pageSize: 2
+          },
+          pageable: true,
+          sortable: true,
+          scrollable: false
+      });
+  });
+</script>
