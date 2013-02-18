@@ -2,7 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+@section Styles {
+    <link href="@Url.Content("~/Styles/cssmap-continents/cssmap-continents.css")" rel="stylesheet" type="text/css" media="screen,projection"/>
+    <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+    <script type="text/javascript">
+        $(function ($) {
+            $('#map-continents').cssMap({ 'size': 850 });
+        });
+    </script>
+}
+
+<!-- <h2>@ViewBag.Message</h2> -->
+
+<div id="map-continents">
+ <ul class="continents">
+  <li class="c1"><a href="#africa">Africa</a></li>
+  <li class="c2"><a href="#asia">Asia</a></li>
+  <li class="c3"><a href="#australia-and-southern-pacific">Australia and Southern Pacific</a></li>
+  <li class="c4"><a href="#europe">Europe</a></li>
+  <li class="c5"><a href="#north-america">North America</a></li>
+  <li class="c6"><a href="#south-america">South America</a></li>
+ </ul>
+</div>
