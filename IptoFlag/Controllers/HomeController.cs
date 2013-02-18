@@ -14,7 +14,7 @@ namespace IptoFlag.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Info()
         {
             return View();
         }
