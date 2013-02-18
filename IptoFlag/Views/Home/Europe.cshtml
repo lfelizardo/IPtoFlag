@@ -4,15 +4,24 @@
 
 @section Styles {
     <link href="@Url.Content("~/Styles/cssmap-europe/cssmap-europe.css")" rel="stylesheet" type="text/css" media="screen,projection"/>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cssmapsplugin.com/4/jquery.cssmap.js"></script> 
+    <script type="text/javascript" src="../Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.cssmap.js"></script> 
     <script type="text/javascript">
         $(function ($) {
             $("#dropdown").hide();
+            $("#info-field").hide();
+            $("#submit").hide();
             $('#map-europe').cssMap({ 'size': 960 });
             $("#eu-countries li").click(function () {
                 $("#dropdown").show().val($(this).attr("id"));
+                $("#info-field").show();
+                $("#submit").show();
+                $(document).scrollTop($(document).height());
                 //alert($(this).attr("id"));
+            });
+            $('#dropdown').change(function () {
+                var countryName = $(this).val();
+                $("#" + countryName).addClass("active-region").siblings().removeClass("active-region");
             });
         });
     </script>
@@ -22,19 +31,23 @@
 <h2>@ViewBag.Message</h2>
 
 <div id="map-europe">
- <ul id="eu-countries" class="europe">
-@foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
-{
-    <li id="@String.Format("{0}", country.Name)" class="@String.Format("eu{0}", country.IdCountry)"><a href="@String.Format("#{0}", country.Name)">@String.Format("{0}", country.Name)</a></li>
-}
-</ul>
+    <ul id="eu-countries" class="europe">
+        @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
+        {
+            <li id="@String.Format("{0}", country.Name).TrimEnd()" class="@String.Format("eu{0}", country.IdCountry).TrimEnd()"><a href="@String.Format("#{0}", country.Name).TrimEnd()">@String.Format("{0}", country.Name).TrimEnd()</a></li>
+        }
+    </ul>
 </div>
 
 <div id="info-box">
-  <select id="dropdown">
-    @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
-    {
-        <option value="@String.Format("{0}", country.Name)">@String.Format("{0}", country.Name)</option>
-    }
-  </select>
+    <select id="dropdown">
+        @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
+        {
+            <option value="@String.Format("{0}", country.Name).TrimEnd()">@String.Format("{0}", country.Name).TrimEnd()</option>
+        }
+    </select>
+
+    <input id="info-field" class="info-field" type="text" name="Info" value="Type your information here.">
+    
+    <div id="submit" class="submit">Submit</div>
 </div>
