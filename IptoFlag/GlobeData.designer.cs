@@ -399,11 +399,13 @@ namespace IptoFlag
 		
 		private int _IdCountry;
 		
-		private string _Info1;
+		private string _InfoCountry;
 		
 		private string _IP;
 		
 		private string _Location;
+		
+		private System.DateTime _Date;
 		
 		private EntityRef<Country> _Country;
 		
@@ -415,12 +417,14 @@ namespace IptoFlag
     partial void OnIdInfoChanged();
     partial void OnIdCountryChanging(int value);
     partial void OnIdCountryChanged();
-    partial void OnInfo1Changing(string value);
-    partial void OnInfo1Changed();
+    partial void OnInfoCountryChanging(string value);
+    partial void OnInfoCountryChanged();
     partial void OnIPChanging(string value);
     partial void OnIPChanged();
     partial void OnLocationChanging(string value);
     partial void OnLocationChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
     #endregion
 		
 		public Info()
@@ -473,22 +477,22 @@ namespace IptoFlag
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Info", Storage="_Info1", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Info1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InfoCountry", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string InfoCountry
 		{
 			get
 			{
-				return this._Info1;
+				return this._InfoCountry;
 			}
 			set
 			{
-				if ((this._Info1 != value))
+				if ((this._InfoCountry != value))
 				{
-					this.OnInfo1Changing(value);
+					this.OnInfoCountryChanging(value);
 					this.SendPropertyChanging();
-					this._Info1 = value;
-					this.SendPropertyChanged("Info1");
-					this.OnInfo1Changed();
+					this._InfoCountry = value;
+					this.SendPropertyChanged("InfoCountry");
+					this.OnInfoCountryChanged();
 				}
 			}
 		}
@@ -529,6 +533,26 @@ namespace IptoFlag
 					this._Location = value;
 					this.SendPropertyChanged("Location");
 					this.OnLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}

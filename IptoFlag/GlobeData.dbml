@@ -20,9 +20,10 @@
     <Type Name="Info">
       <Column Name="IdInfo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="IdCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Info" Member="Info1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InfoCountry" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="IP" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Location" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Country_Info" Member="Country" ThisKey="IdCountry" OtherKey="IdCountry" Type="Country" IsForeignKey="true" />
     </Type>
   </Table>

@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GlobeData">
   <DataContextMoniker Name="/GlobeDataDataContext" />
   <nestedChildShapes>
-    <classShape Id="0c9dffc3-c61e-4f8b-82c1-bc23328828cd" absoluteBounds="2.625, 2, 2, 1.1939925130208333">
+    <classShape Id="e0229316-27eb-4b03-adb8-2c58128738d9" absoluteBounds="2.75, 2.125, 2, 1.1939925130208333">
       <DataClassMoniker Name="/GlobeDataDataContext/Continent" />
       <nestedChildShapes>
-        <elementListCompartment Id="4f8451fc-ec64-4762-94c0-dd1b6fac9f08" absoluteBounds="2.64, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f4372020-6cef-4203-a225-ac7d15130bf3" absoluteBounds="2.765, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" absoluteBounds="5.875, 2, 2, 1.3862939453125">
+    <classShape Id="b36e45dc-1cf3-4596-996d-22566008186b" absoluteBounds="5.75, 2.25, 2, 1.3862939453125">
       <DataClassMoniker Name="/GlobeDataDataContext/Country" />
       <nestedChildShapes>
-        <elementListCompartment Id="a6200eb1-f5b4-45c7-97f7-2126c3f8bb4e" absoluteBounds="5.89, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="290053a4-3a05-4564-9f79-5894ac3cf59e" absoluteBounds="5.765, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.625 : 2.59699625651042); (5.875 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 2.78449625651042); (5.75 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GlobeDataDataContext/Continent/Continent_Country" />
       <nodes>
-        <classShapeMoniker Id="0c9dffc3-c61e-4f8b-82c1-bc23328828cd" />
-        <classShapeMoniker Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" />
+        <classShapeMoniker Id="e0229316-27eb-4b03-adb8-2c58128738d9" />
+        <classShapeMoniker Id="b36e45dc-1cf3-4596-996d-22566008186b" />
       </nodes>
     </associationConnector>
-    <classShape Id="daf81db7-8b0a-4966-a5a4-112bf2734715" absoluteBounds="6, 4.375, 2, 1.7708968098958331">
+    <classShape Id="b8d241f0-94ff-4e13-a177-e66ff62b01f6" absoluteBounds="5.75, 4.5, 2, 1.9631982421875">
       <DataClassMoniker Name="/GlobeDataDataContext/Info" />
       <nestedChildShapes>
-        <elementListCompartment Id="8a3ce0de-e60c-43d4-919c-13ecf79ff1a5" absoluteBounds="6.015, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0dd4c495-8f4d-4edb-abb9-7318ea2cc979" absoluteBounds="5.765, 4.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.9375 : 3.3862939453125); (6.9375 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.75 : 3.6362939453125); (6.75 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GlobeDataDataContext/Country/Country_Info" />
       <nodes>
-        <classShapeMoniker Id="11ad3765-76fe-4208-acf6-d3d00b5adafa" />
-        <classShapeMoniker Id="daf81db7-8b0a-4966-a5a4-112bf2734715" />
+        <classShapeMoniker Id="b36e45dc-1cf3-4596-996d-22566008186b" />
+        <classShapeMoniker Id="b8d241f0-94ff-4e13-a177-e66ff62b01f6" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
