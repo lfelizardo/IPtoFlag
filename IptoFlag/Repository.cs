@@ -29,19 +29,20 @@ namespace IptoFlag
 
         public IQueryable<Info> GetInfos()
         {
-            //controller.repository.viewbag.contries    //return this.entities.Info.FirstOrDefault().Countries; 
             return this.entities.Info;
         }
-
-        //public Info GetInfo(int idInfo)
-        //{
-        //    return this.entities.Info.FirstOrDefault(i => i.IdInfo == idInfo);
-        //}
 
         public Info GetInfo(int idCountry)
         {
             return this.entities.Info.FirstOrDefault(i => i.IdCountry == idCountry);
         }
+
+        //controller.repository.viewbag.contries    //return this.entities.Info.FirstOrDefault().Countries; 
+
+        //public Info GetInfo(int idInfo)
+        //{
+        //    return this.entities.Info.FirstOrDefault(i => i.IdInfo == idInfo);
+        //}
 
 
     }

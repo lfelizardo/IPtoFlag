@@ -30,6 +30,7 @@ namespace IptoFlag.Controllers
         public ActionResult Europe()
         {
             ViewBag.Message = "Europe";
+            ViewBag.Countries = this.repository.GetCountries().ToList();
             return View();
         }
     }

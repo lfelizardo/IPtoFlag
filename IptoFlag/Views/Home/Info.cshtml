@@ -7,6 +7,11 @@
         //<p> @info.IP </p>
     }*@
 
+@* @using (Html.BeginForm()){   
+         <p>Country: @Html.DropDownList("IdCountry", "All")  
+        <input type="submit" value="Filter" /></p>
+        }*@
+
 <table>
     <tr>
         <th>
@@ -31,7 +36,6 @@
 
 @foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
 {
-    
     <tr>
         <td>
             @Html.DisplayFor(modelItem => info.IdInfo)
