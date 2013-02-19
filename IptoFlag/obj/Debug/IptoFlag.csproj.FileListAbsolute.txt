@@ -19,3 +19,17 @@ C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\System.Web.WebPages.Razor.
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.dll
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.pdb
 C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\obj\Debug\IptoFlag.csprojResolveAssemblyReference.cache
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\Kendo.Mvc.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\Kendo.Mvc.xml
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\bg-BG\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\da-DK\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\de-DE\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\es-ES\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\fr-FR\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\nl-NL\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\pl-PL\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\pt-BR\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\pt-PT\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\ru-RU\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\uk-UA\Kendo.Mvc.resources.dll
+C:\Users\Feliz\Documents\GitHub\IPtoFlag\IptoFlag\bin\zh-CN\Kendo.Mvc.resources.dll

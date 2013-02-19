@@ -325,9 +325,8 @@ div#title {
 
 /*Information Field*/
 .info-field {
-    width: 450px;
+    width: 400px !important;
     height: 20px;
-    display: inline;
 }
 
 /*Submit Button*/
@@ -402,4 +401,8 @@ div#title {
 		0px -1px 0px rgba(000,000,000,1),
 		0px 1px 0px rgba(255,255,255,0.2);
     cursor:pointer;
+}
+
+#info-box {
+    text-align: center;
 }

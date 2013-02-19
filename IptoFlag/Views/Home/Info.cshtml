@@ -17,76 +17,27 @@
 }
 *@
 
-<table id="grid">
-    <thead>
-    <tr>
-        <th>
-            ID Info
-        </th>
-        <th>
-            Country Name
-        </th>
-        <th>
-            Information
-        </th>
-        <th>
-            IP
-        </th>
-        <th>
-            Location
-        </th>
-        <th>
-            Date
-        </th>
-    </tr>
-    </thead>
 
-@foreach (var info in ViewBag.Infos as List<IptoFlag.Info>)
-{
-    <tbody>
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => info.IdInfo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => info.Countries.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => info.InfoCountry)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => info.IP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => info.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => info.Date)
-        </td>
-    </tr>
-    </tbody>
-}
 
-</table>
+@(Html.Kendo().Grid<IptoFlag.Info>()
+          .Name("grid")
+          .DataSource(dataSource =>
+          {
+              dataSource.Ajax().PageSize(2)
+              .Read(read => read.Action("ReturnInfos", "Home"));
+          })
+          .Columns(columns =>
+          {
+              columns.Bound(ec => ec.IdInfo).Title("ID Info");
+              columns.Bound(ec => ec.IdCountry).Title("ID Country");
+              columns.Bound(ec => ec.InfoCountry).Title("Information");
+              columns.Bound(ec => ec.IP).Title("IP");
+              columns.Bound(ec => ec.Location).Title("Location");
+              columns.Bound(ec => ec.Date).Title("Date").Format("{0:yyyy/MM/dd}");
+          })
+          .Selectable(selection => selection.Mode(GridSelectionMode.Single))
+          .Sortable()
+          .Filterable()
+          .Pageable()
+     )
 
-<script>
-  $(document).ready(function(){
-      $("#grid").kendoGrid({
-          dataSource: {
-              transport: {
-                  read: {
-                      url: "GlobeEntity.edmx"
-                  }
-              },
-              schema: {
-                  data: "data",
-                  total: "count"
-              },
-              pageSize: 2
-          },
-          pageable: true,
-          sortable: true,
-          scrollable: false
-      });
-  });
-</script>
