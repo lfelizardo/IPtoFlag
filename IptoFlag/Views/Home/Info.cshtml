@@ -17,27 +17,25 @@
 }
 *@
 
-
-
 @(Html.Kendo().Grid<IptoFlag.Info>()
           .Name("grid")
-          .DataSource(dataSource =>
-          {
-              dataSource.Ajax().PageSize(2)
-              .Read(read => read.Action("ReturnInfos", "Home"));
-          })
           .Columns(columns =>
           {
-              columns.Bound(ec => ec.IdInfo).Title("ID Info");
-              columns.Bound(ec => ec.IdCountry).Title("ID Country");
-              columns.Bound(ec => ec.InfoCountry).Title("Information");
-              columns.Bound(ec => ec.IP).Title("IP");
-              columns.Bound(ec => ec.Location).Title("Location");
-              columns.Bound(ec => ec.Date).Title("Date").Format("{0:yyyy/MM/dd}");
+              columns.Bound(el => el.IdInfo).Title("ID Info");
+              columns.Bound(el => el.IdCountry).Title("ID Country");
+              columns.Bound(el => el.InfoCountry).Title("Information");
+              columns.Bound(el => el.IP).Title("IP");
+              columns.Bound(el => el.Location).Title("Location");
+              columns.Bound(el => el.Date).Title("Date").Format("{0:yyyy/MM/dd}");
           })
           .Selectable(selection => selection.Mode(GridSelectionMode.Single))
           .Sortable()
           .Filterable()
           .Pageable()
+          .DataSource(dataSource =>
+          {
+              dataSource.Ajax().PageSize(2)
+              .Read(read => read.Action("ReturnInfos", "Home"));
+          })
      )
 
