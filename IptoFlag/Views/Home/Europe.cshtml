@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IptoFlag.Info
+
+@{
     ViewBag.Title = "Europe";
 }
 
@@ -33,20 +35,17 @@
     <ul id="eu-countries" class="europe">
         @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
         {
-            <li id="@String.Format("{0}", country.Name).TrimEnd()" class="@String.Format("eu{0}", country.IdCountry).TrimEnd()"><a href="@String.Format("#{0}", country.Name).TrimEnd()">@String.Format("{0}", country.Name).TrimEnd()</a></li>
+            <li id="@String.Format("{0}", country.IdCountry).TrimEnd()" class="@String.Format("eu{0}", country.IdCountry).TrimEnd()"><a href="@String.Format("#{0}", country.Name).TrimEnd()">@String.Format("{0}", country.Name).TrimEnd()</a></li>
         }
     </ul>
 </div>
 
 <div id="info-box">
-    <select id="dropdown">
-        @foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
-        {
-            <option value="@String.Format("{0}", country.Name).TrimEnd()">@String.Format("{0}", country.Name).TrimEnd()</option>
-        }
-    </select>
 
-    <input id="info-field" class="info-field" type="text" name="Info" value="Type your information here.">
-    
-    <div id="submit" class="submit">Submit</div>
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post) )
+    {
+        @Html.DropDownListFor(model => model.IdCountry, ViewBag.SelectCountries as IEnumerable<SelectListItem> , "Selecione...", new { id = "dropdown" })
+        @Html.TextBoxFor(model => Model.InfoCountry, new { id="info-field", @class= "info-field", @name = "Info", @value="Type your information here." } )
+        <input class="submit" id="submit" type="submit" value="Submit" />
+    }
 </div>

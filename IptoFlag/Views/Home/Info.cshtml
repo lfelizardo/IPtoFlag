@@ -34,7 +34,7 @@
           .Pageable()
           .DataSource(dataSource =>
           {
-              dataSource.Ajax().PageSize(2)
+              dataSource.Ajax().PageSize(10)
               .Read(read => read.Action("ReturnInfos", "Home"));
           })
      )

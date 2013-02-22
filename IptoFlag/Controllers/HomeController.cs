@@ -32,9 +32,22 @@ namespace IptoFlag.Controllers
 
         public ActionResult Europe()
         {
+            CreateEuropeView();
+
+            return View();
+        }
+
+        private void CreateEuropeView()
+        {
             ViewBag.Message = "Europe";
             ViewBag.Countries = this.repository.GetCountries().ToList();
-            return View();
+
+            var itens = new List<SelectListItem>();
+            foreach (var country in ViewBag.Countries as List<IptoFlag.Countries>)
+            {
+                itens.Add(new SelectListItem { Text = country.Name, Value = country.IdCountry.ToString() });
+            }
+            ViewBag.SelectCountries = itens;
         }
 
 
@@ -48,6 +61,34 @@ namespace IptoFlag.Controllers
                                                                     Date = x.Date }).ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public ActionResult Create(Info information)
+        {
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        information.IP = GetIP();
+                        information.Location = "Default";
+                        information.Date = DateTime.Now;
+                        this.repository.AddInfo(information);
+                        this.repository.SubmitChanges();
+                        CreateEuropeView();
+                        return View("Europe");
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            return View(information);
+        }
+
+        public String GetIP()
+        {
+            String clientIP = (HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null) ? HttpContext.Request.UserHostAddress: HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            return clientIP;
+        }
 
     }
 }
