@@ -7,66 +7,9 @@ This is a practical test for a job application,
 1) Because it is not a real aplication and it is intend to test my skills I only did the Europe Continent, so if you are going to test this aplication be in mind that only Europe is implemented and the other continents will not work (It's the same thing for the other continents though)
 
 2) If you want to test adding new countries to europe you just have to add it to the DataBase table Countries following the ID list bellow.
-<div id="map-europe">
- <ul class="europe">
-  <li class="eu1"><a href="#albania">Albania</a></li>
-  <li class="eu2"><a href="#andorra">Andorra</a></li>
-  <li class="eu3"><a href="#austria">Austria</a></li>
-  <li class="eu4"><a href="#belarus">Belarus</a></li>
-  <li class="eu5"><a href="#belgium">Belgium</a></li>
-  <li class="eu6"><a href="#bosnia-and-herzegovina">Bosnia and Herzegovina</a></li>
-  <li class="eu7"><a href="#bulgaria">Bulgaria</a></li>
-  <li class="eu8"><a href="#croatia">Croatia</a></li>
-  <li class="eu9"><a href="#cyprus">Cyprus</a></li>
-  <li class="eu10"><a href="#czech-republic">Czech Republic</a></li>
-  <li class="eu11"><a href="#denmark">Denmark</a></li>
-  <li class="eu12"><a href="#estonia">Estonia</a></li>
-  <li class="eu13"><a href="#france">France</a></li>
-  <li class="eu14"><a href="#finland">Finland</a></li>
-  <li class="eu15"><a href="#georgia">Georgia</a></li>
-  <li class="eu16"><a href="#germany">Germany</a></li>
-  <li class="eu17"><a href="#greece">Greece</a></li>
-  <li class="eu18"><a href="#hungary">Hungary</a></li>
-  <li class="eu19"><a href="#iceland">Iceland</a></li>
-  <li class="eu20"><a href="#ireland">Ireland</a></li>
-  <li class="eu21"><a href="#san-marino">San_Marino</a></li>
-  <li class="eu22"><a href="#italy">Italy</a></li>
-  <li class="eu23"><a href="#kosovo">Kosovo</a></li>
-  <li class="eu24"><a href="#latvia">Latvia</a></li>
-  <li class="eu25"><a href="#liechtenstein">Liechtenstein</a></li>
-  <li class="eu26"><a href="#lithuania">Lithuania</a></li>
-  <li class="eu27"><a href="#luxembourg">Luxembourg</a></li>
-  <li class="eu28"><a href="#macedonia">Macedonia</a></li>
-  <li class="eu29"><a href="#malta">Malta</a></li>
-  <li class="eu30"><a href="#moldova">Moldova</a></li>
-  <li class="eu31"><a href="#monaco">Monaco</a></li>
-  <li class="eu32"><a href="#montenegro">Montenegro</a></li>
-  <li class="eu33"><a href="#netherlands">Netherlands</a></li>
-  <li class="eu34"><a href="#norway">Norway</a></li>
-  <li class="eu35"><a href="#poland">Poland</a></li>
-  <li class="eu36"><a href="#portugal">Portugal</a></li>
-  <li class="eu37"><a href="#romania">Romania</a></li>
-  <li class="eu38"><a href="#russia">Russia</a></li>
-  <li class="eu39"><a href="#serbia">Serbia</a></li>
-  <li class="eu40"><a href="#slovakia">Slovakia</a></li>
-  <li class="eu41"><a href="#slovenia">Slovenia</a></li>
-  <li class="eu42"><a href="#spain">Spain</a></li>
-  <li class="eu43"><a href="#sweden">Sweden</a></li>
-  <li class="eu44"><a href="#switzerland">Switzerland</a></li>
-  <li class="eu45"><a href="#turkey">Turkey</a></li>
-  <li class="eu46"><a href="#ukraine">Ukraine</a></li>
-  <li class="eu47"><a href="#united-kingdom">United_Kingdom</a></li>
-<!-- remove this comment and UK list item (above) to activate countries of the United Kingdom
-  <li class="eu48"><a href="#england">England</a></li>
-  <li class="eu49"><a href="#isle-of-man">Isle_of_Man</a></li>
-  <li class="eu50"><a href="#northern-ireland">Northern_Ireland</a></li>
-  <li class="eu51"><a href="#scotland">Scotland</a></li>
-  <li class="eu52"><a href="#wales">Wales</a></li>
--->
- </ul>
-</div>
+&lt;div id=&quot;map-europe&quot;&gt;<br/> &lt;ul class=&quot;europe&quot;&gt;<br/>  &lt;li class=&quot;eu1&quot;&gt;&lt;a href=&quot;#albania&quot;&gt;Albania&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu2&quot;&gt;&lt;a href=&quot;#andorra&quot;&gt;Andorra&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu3&quot;&gt;&lt;a href=&quot;#austria&quot;&gt;Austria&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu4&quot;&gt;&lt;a href=&quot;#belarus&quot;&gt;Belarus&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu5&quot;&gt;&lt;a href=&quot;#belgium&quot;&gt;Belgium&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu6&quot;&gt;&lt;a href=&quot;#bosnia-and-herzegovina&quot;&gt;Bosnia and Herzegovina&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu7&quot;&gt;&lt;a href=&quot;#bulgaria&quot;&gt;Bulgaria&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu8&quot;&gt;&lt;a href=&quot;#croatia&quot;&gt;Croatia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu9&quot;&gt;&lt;a href=&quot;#cyprus&quot;&gt;Cyprus&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu10&quot;&gt;&lt;a href=&quot;#czech-republic&quot;&gt;Czech Republic&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu11&quot;&gt;&lt;a href=&quot;#denmark&quot;&gt;Denmark&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu12&quot;&gt;&lt;a href=&quot;#estonia&quot;&gt;Estonia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu13&quot;&gt;&lt;a href=&quot;#france&quot;&gt;France&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu14&quot;&gt;&lt;a href=&quot;#finland&quot;&gt;Finland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu15&quot;&gt;&lt;a href=&quot;#georgia&quot;&gt;Georgia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu16&quot;&gt;&lt;a href=&quot;#germany&quot;&gt;Germany&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu17&quot;&gt;&lt;a href=&quot;#greece&quot;&gt;Greece&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu18&quot;&gt;&lt;a href=&quot;#hungary&quot;&gt;Hungary&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu19&quot;&gt;&lt;a href=&quot;#iceland&quot;&gt;Iceland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu20&quot;&gt;&lt;a href=&quot;#ireland&quot;&gt;Ireland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu21&quot;&gt;&lt;a href=&quot;#san-marino&quot;&gt;San_Marino&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu22&quot;&gt;&lt;a href=&quot;#italy&quot;&gt;Italy&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu23&quot;&gt;&lt;a href=&quot;#kosovo&quot;&gt;Kosovo&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu24&quot;&gt;&lt;a href=&quot;#latvia&quot;&gt;Latvia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu25&quot;&gt;&lt;a href=&quot;#liechtenstein&quot;&gt;Liechtenstein&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu26&quot;&gt;&lt;a href=&quot;#lithuania&quot;&gt;Lithuania&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu27&quot;&gt;&lt;a href=&quot;#luxembourg&quot;&gt;Luxembourg&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu28&quot;&gt;&lt;a href=&quot;#macedonia&quot;&gt;Macedonia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu29&quot;&gt;&lt;a href=&quot;#malta&quot;&gt;Malta&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu30&quot;&gt;&lt;a href=&quot;#moldova&quot;&gt;Moldova&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu31&quot;&gt;&lt;a href=&quot;#monaco&quot;&gt;Monaco&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu32&quot;&gt;&lt;a href=&quot;#montenegro&quot;&gt;Montenegro&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu33&quot;&gt;&lt;a href=&quot;#netherlands&quot;&gt;Netherlands&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu34&quot;&gt;&lt;a href=&quot;#norway&quot;&gt;Norway&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu35&quot;&gt;&lt;a href=&quot;#poland&quot;&gt;Poland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu36&quot;&gt;&lt;a href=&quot;#portugal&quot;&gt;Portugal&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu37&quot;&gt;&lt;a href=&quot;#romania&quot;&gt;Romania&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu38&quot;&gt;&lt;a href=&quot;#russia&quot;&gt;Russia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu39&quot;&gt;&lt;a href=&quot;#serbia&quot;&gt;Serbia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu40&quot;&gt;&lt;a href=&quot;#slovakia&quot;&gt;Slovakia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu41&quot;&gt;&lt;a href=&quot;#slovenia&quot;&gt;Slovenia&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu42&quot;&gt;&lt;a href=&quot;#spain&quot;&gt;Spain&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu43&quot;&gt;&lt;a href=&quot;#sweden&quot;&gt;Sweden&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu44&quot;&gt;&lt;a href=&quot;#switzerland&quot;&gt;Switzerland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu45&quot;&gt;&lt;a href=&quot;#turkey&quot;&gt;Turkey&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu46&quot;&gt;&lt;a href=&quot;#ukraine&quot;&gt;Ukraine&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu47&quot;&gt;&lt;a href=&quot;#united-kingdom&quot;&gt;United_Kingdom&lt;/a&gt;&lt;/li&gt;<br/>&lt;!-- remove this comment and UK list item (above) to activate countries of the United Kingdom<br/>  &lt;li class=&quot;eu48&quot;&gt;&lt;a href=&quot;#england&quot;&gt;England&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu49&quot;&gt;&lt;a href=&quot;#isle-of-man&quot;&gt;Isle_of_Man&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu50&quot;&gt;&lt;a href=&quot;#northern-ireland&quot;&gt;Northern_Ireland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu51&quot;&gt;&lt;a href=&quot;#scotland&quot;&gt;Scotland&lt;/a&gt;&lt;/li&gt;<br/>  &lt;li class=&quot;eu52&quot;&gt;&lt;a href=&quot;#wales&quot;&gt;Wales&lt;/a&gt;&lt;/li&gt;<br/>--&gt;<br/> &lt;/ul&gt;<br/>&lt;/div&gt;
 
-For example, looking at the list above we have <li class="eu38"><a href="#russia">Russia</a></li>
+For example, looking at the list above we have &lt;li class=&quot;eu38&quot;&gt;&lt;a href=&quot;#russia&quot;&gt;Russia&lt;/a&gt;&lt;/li&gt;
 if you want to add russia to the europe countries you just have to add the following line to the database countries values:
 IdCountry = 38, Name = Russia, IdContinent = 6 (Because 6 is europe ID);
 
