@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
+using System.Xml;
+using System.Collections.Specialized;
+using System.Net;
 
 
 namespace IptoFlag.Controllers
@@ -69,7 +73,8 @@ namespace IptoFlag.Controllers
                     if (ModelState.IsValid)
                     {
                         information.IP = GetIP();
-                        information.Location = "Default";
+                        // ===> CHANGE GetIP() TO EMULATE A TEST FOR LOCATION ie. GetCountryByIP("189.13.34.85"); <===
+                        information.Location = GetCountryByIP(GetIP()); 
                         information.Date = DateTime.Now;
                         this.repository.AddInfo(information);
                         this.repository.SubmitChanges();
@@ -88,6 +93,30 @@ namespace IptoFlag.Controllers
         {
             String clientIP = (HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] == null) ? HttpContext.Request.UserHostAddress: HttpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
             return clientIP;
+        }
+
+        public string GetCountryByIP(string ipAddress)
+        {
+            string ipResponse = IPRequestHelper("http://api.ipinfodb.com/v3/ip-country/?key=6adf9747f004ec06b2d5993cd1b7ecae054ae617a97cb73f80b3468d2d1fc836&ip=", ipAddress);
+            string[] countries = ipResponse.Split(new string[] { ";" }, StringSplitOptions.None);
+            string country = countries[4];
+
+            return country;
+        }
+
+        public string IPRequestHelper(string url, string ipAddress) {
+              string checkURL = url + ipAddress;
+         
+              HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(checkURL);
+              HttpWebResponse objResponse = (HttpWebResponse)objRequest.GetResponse();
+       
+              StreamReader responseStream = new StreamReader(objResponse.GetResponseStream());
+              string responseRead = responseStream.ReadToEnd();
+       
+              responseStream.Close();
+              responseStream.Dispose();
+       
+              return responseRead;
         }
 
     }
